@@ -43,24 +43,62 @@ $row = $result->fetch_array();
 
 
       <form action="edit_information.php" method="post">
-        <div class="hotel-edit-form">
-          <input type="text" name="hotelname" value="<?php echo $row['Name']?>">
-          <input type="text" name="email" value="<?php echo $row['Email']?>">
-          <input type="text" name="phonenumber" value="<?php echo $row['Phone']?>">
-          <input type="text" name="address" value="<?php echo $row['Address']?>">
-          <input type="text" name="city" value="<?php echo $row['City']?>">
-          <input type="text" name="province" value="<?php echo $row['Province']?>">
-          <input type="text" name="country" value="<?php echo $row['Country']?>">
-          <input type="text" name="zipcode" value="<?php echo $row['ZipCode']?>">
-          <input type="hidden" name="hotelID" value=<?php echo $hotelID;?>>
-        </div>
+        <ul class="hotel-edit-form">
+          <li>
+            <label for="hotelname">Name</label>
+            <input class="input-long" type="text" name="hotelname" value="<?php echo $row['Name']?>">
+          </li>
 
-        <div style="position: relative; margin-top: 2em; text-align: center;">
-          <button type="submit" name="edit-submit" class="hover-button">Apply</button>
-        </div>
+          <li>
+            <label for="email">Email</label>
+            <input class="input-long" type="text" name="email" value="<?php echo $row['Email']?>">
+          </li>
+
+          <li>
+            <label for="phonenumber">Telephone</label>
+            <input class="input-short" type="text" name="phonenumber" value="<?php echo $row['Phone']?>">
+          </li>
+
+          <li>
+            <label for="address">Address</label>
+            <input class="input-long" type="text" name="address" value="<?php echo $row['Address']?>">
+          </li>
+
+          <li>
+            <label for="city">City</label>
+            <input class="input-long" type="text" name="city" value="<?php echo $row['City']?>">
+          </li>
+
+          <li>
+            <label for="province">Province</label>
+            <input class="input-long" type="text" name="province" value="<?php echo $row['Province']?>">
+          </li>
+
+          <li>
+            <label for="country">Country</label>
+            <input class="input-long" type="text" name="country" value="<?php echo $row['Country']?>">
+
+            <label for="zipcode">Zipcode</label>
+            <input class="input-short" type="text" name="zipcode" value="<?php echo $row['ZipCode']?>">
+          </li>
+
+          <li>
+            <label for="description">Description</label>
+            <textarea name="description" rows="10" cols="45"><?php echo $row['Description']?></textarea>
+          </li>
+
+          <input type="hidden" name="hotelID" value=<?php echo $hotelID;?>>
+
+          <div style="position: relative; margin-top: 2em; text-align: center;">
+            <button type="submit" name="edit-submit" class="hover-button" style="padding: 7.5px 60px; font-size: 18px; z-index: 1">Apply</button>
+          </div>
+        </ul>
       </form>
 
-        <!-- Submit button *change the value to the roomType.TypeID so it can be posted -->
+      <div style="height: 50px;"></div>
+
+
+
 
 
 

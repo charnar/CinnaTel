@@ -77,13 +77,6 @@ if(!$result1) {
 
     <!-- Contact and address info container -->
       <div class="hotel-info-bar">
-        <div class="hotel-info-section">
-          <div class="hotel-information">
-            <i style="font-size:25px;color:white;" class='fas fa-phone'></i>
-            <h1 style="margin-top: 17px">Address</h1>
-            <h2><?php echo $hoteldata['Address'];?></h2>
-          </div>
-        </div>
 
         <div class="hotel-info-section">
           <div class="hotel-information">
@@ -91,12 +84,19 @@ if(!$result1) {
             <h1 style="margin-top: 17px">Phone</h1>
             <h2><?php echo $hoteldata['Phone'];?></h2>
           </div>
-
         </div>
 
         <div class="hotel-info-section">
           <div class="hotel-information">
-            <i style="font-size:25px;color:white;" class='fas fa-phone'></i>
+            <i style="font-size:25px;color:white;" class='fas fa-map-marker-alt'></i>
+            <h1 style="margin-top: 17px; margin-left: 5px;">Address</h1>
+            <h2><?php echo $hoteldata['Address'];?>, <?php echo $hoteldata['Province']?>, <?php echo $hoteldata['Country']?></h2>
+          </div>
+        </div>
+
+        <div class="hotel-info-section">
+          <div class="hotel-information">
+            <i style="font-size:25px;color:white;" class='fas fa-envelope-open'></i>
             <h1 style="margin-top: 17px">Email</h1>
             <h2><?php echo $hoteldata['Email'];?></h2>
           </div>
@@ -130,7 +130,6 @@ if(!$result1) {
 
           <div class="room-showcase">
             <div class="room-showcase-image" style="background-image: url(<?php echo $roomdata['ImageLink']?>)"></div>
-
             <h1><?php echo $roomdata['Name'];?> Room</h1>
             <h2 style="font-size: 25px;">$<?php echo $roomdata['Price'];?> per night</h2>
             <h2 style="width: 90%; margin: auto; margin-top: 20px;"><?php echo $roomdata['Description'];?></h2>

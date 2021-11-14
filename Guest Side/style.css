@@ -662,26 +662,22 @@ h2 {
 }
 
 .hotel-info-bar {
-  display: table;
-  padding: 2em;
-  grid-template: 1fr 1fr 1fr;
-  table-layout: fixed;
-  width: 100%;
+  display: grid;
+  grid-row-gap: 1em;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   background-color: var(--dark_oak_brown);
 }
 
 .hotel-info-section {
-  display: table-cell;
+  justify-self: center;
 }
 
 
 .hotel-information {
-  padding-left: 100px;
   display: inline-block;
   position: relative;
-  top: 28px;
-  padding-bottom: 30px;
   width: 100%;
+  padding: 1em;
 }
 
 .hotel-information > i {

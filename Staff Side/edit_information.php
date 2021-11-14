@@ -11,10 +11,13 @@ if(isset($_POST['edit-submit'])) {
   $province = $_POST['province'];
   $country = $_POST['country'];
   $zipcode = $_POST['zipcode'];
+  $description = $_POST['description'];
+
+  $description = str_replace("'", "\'", $description);
 
   $q = "UPDATE hotel SET HotelID = '$hotelID', Name = '$hotelname', Email = '$email',
   Phone = '$phonenumber', Address = '$address', City = '$city', Province = '$province',
-  Country = '$country', ZipCode = '$zipcode' WHERE HotelID = '$hotelID';";
+  Country = '$country', ZipCode = '$zipcode', Description = '$description' WHERE HotelID = '$hotelID';";
 
   $result=$mysqli->query($q);
   if(!$result){
