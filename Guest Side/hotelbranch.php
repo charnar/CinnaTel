@@ -45,7 +45,7 @@ if(!$result1) {
       <div class="navbar">
         <!-- Top left icon -->
         <a href="main.html" style="text-decoration: none;">
-          <h1 class="logo">Cinnamon Hotels & Resorts I CHANGED THIS TO SHOW GITHUB AGAIN</h1>
+          <h1 class="logo">Cinnamon Hotels & Resorts</h1>
         </a>
 
         <!-- Top right hamburger menu -->
