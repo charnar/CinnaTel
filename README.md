@@ -13,9 +13,10 @@ the Manager and Receptionist of the hotel.
 
 Function | HTML+CSS | PHP | MySQL | 
 :------------ | :-------------| :-------------| :-------------
+Book a Room | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
+Check Room Availability | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 Find a Hotel | :heavy_check_mark: |  :heavy_check_mark: 
 Hotel Branch Page | :x: | :heavy_check_mark: | :heavy_check_mark:
-Book a Room | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 Check-in | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 Check-out | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 Edit Hotel Information | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
