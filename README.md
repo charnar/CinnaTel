@@ -19,6 +19,6 @@ Find a Hotel | :heavy_check_mark: |  :heavy_check_mark:
 Hotel Branch Page | :x: | :heavy_check_mark: | :heavy_check_mark:
 Check-in | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 Check-out | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
-Edit Hotel Information | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
+Edit Hotel Information | :x: | :x: | :heavy_check_mark:
 Guest List | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 Staff List | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
