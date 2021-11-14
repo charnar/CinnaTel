@@ -1,0 +1,58 @@
+<?php
+    $guestid = $_POST['guestid'];
+    $hotelid = $_POST['hotelid'];
+    $bookid = $_POST['bookid'];
+    $roomid = $_POST['roomid'];
+    require_once('connect.php');
+    echo "---check_in_update php desuyo---";
+    // update room.Status to 0 --> room availiable
+
+    $q="UPDATE room SET Status = 0
+    WHERE RoomID = $roomid";
+
+    $result = $mysqli -> query($q);
+    if (!$result) {
+        die('Error look at q : '.$q." //// ". $mysqli->error);
+    }
+    echo "<br>";
+    echo "--room.Status updated--";
+
+
+    // update roomsbooked.room to NULL--> room availiable
+    $q1="UPDATE roomsbooked SET RoomID = NULL
+    WHERE BookingID = $bookid";
+    $result1 = $mysqli -> query($q1);
+    if (!$result1) {
+        die('Error look at q : '.$q1." //// ". $mysqli->error);
+    }
+    echo "<br>";
+    echo "--roomsbooked.RoomID updated--";
+
+
+    // update roomsbooked.Status to 0 --> check out leaw (REPLACE THIS WITH DELETE SOON)
+
+    $q2="UPDATE roomsbooked SET Status = 0
+    WHERE BookingID = $bookid";
+
+    $result2 = $mysqli -> query($q2);
+    if (!$result2) {
+        die('Error look at q : '.$q2." //// ". $mysqli->error);
+    }
+
+    echo "<br>";
+    echo "--roomsbooked.Status updated--";
+
+    header("Location: receptionist_home.php");
+
+
+    // START OF delete the booking, payment, guest, roomsbooked
+
+    //delete roomsbooked
+
+    //delete booking
+
+    //delete payment
+
+    //delete guest
+
+?>

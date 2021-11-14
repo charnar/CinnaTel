@@ -1,0 +1,475 @@
+body {
+  margin: 0;
+  padding: 0;
+
+}
+
+html {
+  overflow-x: hidden;
+}
+
+canvas  {
+  z-index: -1;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: lighter;
+
+}
+
+:root {
+  --cream: #FAE9CF;
+  --light_brown: #CDA67A;
+  --brown: #986544;
+  --dark_coffee_brown: #6A462F;
+  --dark_oak_brown: #4A3120;
+}
+
+
+/* Components (Buttons and etc) */
+.hover-button  {
+  font-size: 1.3rem;
+  padding: 10px 30px;
+  border: var(--brown) solid 2px;
+  color: var(--brown);
+  background: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  transition: .4s;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.hover-button::after  {
+  content: '';
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  background: var(--brown);
+  left: 0;
+  top: 0;
+  z-index: -1;
+  transition: .4s;
+  overflow: hidden;
+}
+
+.hover-button:hover  {
+  color: white;
+}
+
+.hover-button:hover::after  {
+  width: 100%;
+}
+
+
+/*ALTERATIVE HOVER BUTTON STYLE */
+.hover-button-alt  {
+  font-size: 1.3rem;
+  padding: 10px 30px;
+  border: white solid 2px;
+  color: white;
+  background: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  transition: .4s;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.hover-button-alt::after  {
+  content: '';
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  background: white;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  transition: .4s;
+  overflow: hidden;
+}
+
+.hover-button-alt:hover  {
+  color: var(--dark_oak_brown);
+}
+
+.hover-button-alt:hover::after  {
+  width: 100%;
+}
+
+/*-------- PLUS BUTTON WITH HOVER --------*/
+
+.button-plus {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  background: white;
+  cursor: pointer;
+  border: 2px solid var(--brown);
+}
+
+.button-plus:after {
+  content: '';
+  position: absolute;
+  transform: translate(-50%, -50%);
+  height: 4px;
+  width: 50%;
+  background: var(--brown);
+  top: 50%;
+  left: 50%;
+}
+
+.button-plus:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--brown);
+  height: 50%;
+  width: 4px;
+}
+
+.button-plus:hover:before,
+.button-plus:hover:after {
+  background: white;
+  transition: 0.2s;
+}
+
+.button-plus:hover {
+  background-color: var(--brown);
+  transition: 0.2s;
+}
+
+/*-------- END OF PLUS BUTTON WITH HOVER --------*/
+
+
+/*-------- MINUS BUTTON WITH HOVER --------*/
+
+.button-minus {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  background: white;
+  cursor: pointer;
+  border: 2px solid var(--brown);
+}
+
+.button-minus:after {
+  content: '';
+  position: absolute;
+  transform: translate(-50%, -50%);
+  height: 4px;
+  width: 50%;
+  background: var(--brown);
+  top: 50%;
+  left: 50%;
+}
+
+.button-minus:hover:before,
+.button-minus:hover:after {
+  background: white;
+  transition: 0.2s;
+}
+
+.button-minus:hover {
+  background-color: var(--brown);
+  transition: 0.2s;
+}
+
+/*-------- END OF MINUS BUTTON WITH HOVER --------*/
+
+/*END OF BUTTON AND COMPONENTS */
+
+.navbar-manager-home {
+  top: 0;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: white;
+  width: 100%;
+  height: 80px;
+  z-index: 10;
+
+}
+
+.logo {
+  flex: 1 1 auto;
+  margin-left: 40px;
+  margin-top: 22px;
+  letter-spacing: 0.5px;
+  font-size: 28px;
+  font-family: Cambria;
+  font-weight: bold;
+  color: var(--dark_coffee_brown);
+  text-decoration: none;
+  z-index: 9;
+}
+
+.navbar {
+  top: 0;
+  position: fixed;
+  background-color: var(--dark_coffee_brown);
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  z-index: 10;
+
+}
+
+.nav-button {
+  margin-top: 15px;
+  padding-right: 10px;
+  padding-left: 10px;
+  display: inline-block;
+  letter-spacing: 0.5px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.page-heading  {
+  font-size: 35px;
+  margin: auto;
+  font-weight: normal;
+  color: var(--dark_coffee_brown);
+  padding-bottom: 1em;
+  padding-top: 1em;
+  text-align: center;
+}
+.button-grid-layout  {
+  padding-top: 40px;
+  position: relative;
+  margin: auto;
+
+}
+
+.home-container  {
+  position: relative;
+  top: 4em;
+  text-align: center;
+  width: 60%;
+  margin: auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0px 60px 0 rgba(0, 0, 0, 0.2);
+  padding: 2em;
+}
+
+.hotel-heading > h1 {
+  position: relative;
+  letter-spacing: 0.5px;
+  font-size: 40px;
+  font-family: Cambria;
+  font-weight: bold;
+  color: var(--dark_coffee_brown);
+  text-decoration: none;
+}
+
+.login-form  {
+  display: flex;
+  position: relative;
+  margin: auto;
+  width: 400px;
+  background-color: white;
+  padding: 4em;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0px 60px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+.login-form > form > input {
+  font-size: 20px;
+  padding: 10px 30px;
+  margin-bottom: 20px;
+}
+
+.login-form > form > button {
+  font-size: 20px;
+  padding: 10px 30px;
+  margin-bottom: 20px;
+}
+
+
+/* Start of Background Splash Container */
+.background-splash  {
+  margin-top: 80px;
+  height: 800px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+
+}
+
+.background-splash > h1 {
+  position: relative;
+  top: 30%;
+  color: white;
+  font-size: 65px;
+}
+
+/* End of Background Splash Container */
+
+/* Start of Hotels List Container */
+.hotels-list  {
+  padding-top: 2em;
+  padding-bottom: 2em;
+  width: 100%;
+}
+
+.country-container  {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-top: 2px solid var(--brown);
+  padding: 1em;
+}
+
+.country-container > h1 {
+  font-size: 40px;
+  font-weight: 400;
+  color: var(--dark_oak_brown);
+}
+
+.country-hotels > button {
+  border: none;
+  color: var(--dark_oak_brown);
+  font-size: 25px;
+  padding-right: 40px;
+  font-weight: 300;
+  cursor: pointer;
+  background-color: transparent;
+}
+/* End of Hotels List Container */
+
+
+
+/* Start of Guest List Container */
+
+.guest-table  {
+  position: relative;
+  width: 100%;
+  background-color: transparent;
+}
+
+.guest-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 50%;
+  border: white solid 2px;
+  margin-bottom: 1em;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0px 60px 0 rgba(0, 0, 0, 0.2);
+}
+
+.guest-container-left {
+  text-align: left;
+  flex: 50%;
+  padding: 2em;
+}
+
+.guest-container-left > h1{
+  font-weight: normal;
+  font-size: 25px;
+}
+
+.guest-container-left > h2{
+  font-size: 20px;
+}
+
+
+.guest-container-right {
+  text-align: right;
+  align-self: center;
+  flex: 50%;
+  padding: 2em;
+
+}
+
+.guest-container-right> h2{
+  font-size: 20px;
+
+}
+
+/* End of Guest List Container */
+
+/* Start of Room List Container */
+.room-number-card  {
+  position: relative;
+  display: flex;
+  width: 50%;
+  margin: auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0px 60px 0 rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+.room-number-card-left {
+  text-align: left;
+  flex: 50%;
+  padding: 2em;
+  align-self: center;
+}
+
+.room-number-card-left > h1{
+  font-weight: normal;
+  font-size: 25px;
+}
+
+.room-number-card-left > h2{
+  font-size: 20px;
+}
+
+
+.room-number-card-right {
+  text-align: right;
+  align-self: center;
+  flex: 50%;
+  padding: 2em;
+
+}
+
+/* Hotel Edit Info Container */
+.hotel-edit-form  {
+  position: relative;
+  text-align: center;
+  padding: 2em;
+  width: 82.5%;
+  margin: auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0px 60px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+.hotel-edit-form > input {
+  margin-right: 10px;
+  margin-bottom: 20px;
+  padding: 10px 100px 10px 0;
+  text-indent: 10px;
+  font-size: 20px;
+}
+
+.hotel-edit-form > input::placeholder{
+  overflow: visible;
+}
+
+
+
+/* End of Hotel Edit Info Container */
