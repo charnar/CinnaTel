@@ -10,3 +10,7 @@ The objective of this project is to:
 
 Our hotel database system consists of both the guest and staff side. For the staff side, we only focus on
 the Manager and Receptionist of the hotel. 
+
+- Functions
+- [x] Check-in
+- [x] Check-out 
