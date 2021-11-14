@@ -12,7 +12,7 @@ Our hotel database system consists of both the guest and staff side. For the sta
 the Manager and Receptionist of the hotel. 
 
 Function | HTML+CSS | PHP | MySQL | 
-:------------ | :-------------| :-------------| :-------------| :-------------
+:------------ | :-------------| :-------------| :-------------
 Find a Hotel | :heavy_check_mark: |  :heavy_check_mark: 
 Hotel Branch Page | :x: | :heavy_check_mark: | :heavy_check_mark:
 Book a room | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
