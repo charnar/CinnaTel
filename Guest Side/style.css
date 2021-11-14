@@ -338,10 +338,9 @@ h2 {
   font-size: 20px;
 }
 
-@media (max-width: 1500px) { /*breakpoint*/
+@media (max-width: 1500px) {
   .footer-section {
     display: block;
-
   }
 }
 /* End of Container Bottom Footer Style */
@@ -662,12 +661,44 @@ h2 {
   text-align: center;
 }
 
-
 .hotel-info-bar {
+  display: table;
+  padding: 2em;
+  grid-template: 1fr 1fr 1fr;
+  table-layout: fixed;
   width: 100%;
-  background-color: var(--dark_coffee_brown);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  background-color: var(--dark_oak_brown);
+}
+
+.hotel-info-section {
+  display: table-cell;
+}
+
+
+.hotel-information {
+  padding-left: 100px;
+  display: inline-block;
+  position: relative;
+  top: 28px;
+  padding-bottom: 30px;
+  width: 100%;
+}
+
+.hotel-information > i {
+  display: inline;
+}
+
+.hotel-information > h1 {
+  display: inline;
+  color: white;
+  font-size: 25px;
+  padding-left: 10px;
+}
+
+.hotel-information > h2 {
+  padding-left: 40px;
+  color: white;
+  font-size: 20px;
 }
 
 

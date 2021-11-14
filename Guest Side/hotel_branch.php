@@ -72,23 +72,36 @@ if(!$result1) {
       <div class="background-splash" style="background-image: url('<?php echo $hoteldata['ImageLink']?>');">
         <h1><?php echo $hoteldata['Name']?></h1>
         <h2><?php echo $hoteldata['Country']?></h2>
-
       </div>
 
 
     <!-- Contact and address info container -->
       <div class="hotel-info-bar">
-        <div class="footer-information">
-          <i style="font-size:25px;color:white;" class='fas fa-phone'></i>
-          <h1 style="margin-top: 17px">Address</h1>
-          <h2>02-420-6969</h2>
+        <div class="hotel-info-section">
+          <div class="hotel-information">
+            <i style="font-size:25px;color:white;" class='fas fa-phone'></i>
+            <h1 style="margin-top: 17px">Address</h1>
+            <h2><?php echo $hoteldata['Address'];?></h2>
+          </div>
         </div>
 
-        <div class="footer-information">
-          <i style="font-size:25px;color:white;" class='fas fa-phone'></i>
-          <h1 style="margin-top: 17px">Phone</h1>
-          <h2>02-420-6969</h2>
+        <div class="hotel-info-section">
+          <div class="hotel-information">
+            <i style="font-size:25px;color:white;" class='fas fa-phone'></i>
+            <h1 style="margin-top: 17px">Phone</h1>
+            <h2><?php echo $hoteldata['Phone'];?></h2>
+          </div>
+
         </div>
+
+        <div class="hotel-info-section">
+          <div class="hotel-information">
+            <i style="font-size:25px;color:white;" class='fas fa-phone'></i>
+            <h1 style="margin-top: 17px">Email</h1>
+            <h2><?php echo $hoteldata['Email'];?></h2>
+          </div>
+        </div>
+
       </div>
 
     <!-- About hotel branch container -->
