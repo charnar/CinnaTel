@@ -13,4 +13,4 @@ the Manager and Receptionist of the hotel.
 
 Function | HTML | CSS | PHP | MySQL | 
 :------------ | :-------------| :-------------| :-------------| :-------------
-substr | :heavy_check_mark: |  :white_check_mark: | :heavy_check_mark:
+Find a Hotel | :heavy_check_mark: |  :heave_check_mark: | :heavy_check_mark: | :heavy_check_mark:
