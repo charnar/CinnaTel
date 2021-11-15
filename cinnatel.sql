@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2021 at 03:06 PM
+-- Generation Time: Nov 15, 2021 at 04:02 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -122,7 +122,7 @@ CREATE TABLE `hotel` (
 
 INSERT INTO `hotel` (`HotelID`, `Name`, `Address`, `City`, `Province`, `Country`, `ZipCode`, `Email`, `Phone`, `ImageLink`, `Description`) VALUES
 (1, 'Cinnabun Resort', '3/325 Mellow Trail', 'Cinnatown', 'Mt. Buns', 'Cinnamon Islands', '12021', 'cinnabun@cinnatel.org', '029991111', 'images/hotel1.jpg', 'You can\'t buy happiness, but you can buy cake and that\'s kind of the same thing.\r\n<br><br>\r\nThere was a mood of magic and frenzy to the room. Crystalline swirls of sugar and flour still lingered in the air like kite tails. And then there was the smell. The smell of hope, the kind of smell that brought people home.'),
-(2, 'The Cinnasquare', '5/200, Park Avenue', 'Cinnatown', 'Cinnatown', 'Cinnamon Islands', '22021', 'cinnasquaretown@cinnatel.org', '029991112', 'images/hotel2.jpg', '');
+(2, 'The Cinnahill', '3/326, Peak Path', 'The Peak', 'Mt. Buns', 'Cinnamon Islands', '22021', 'cinnahill@cinnatel.org', '029991112', 'images/hotel2.jpg', 'Life\'s batter with cake.<br><br>\r\nBaking may be regarded as a science, but it\'s the chemistry between the ingredients and the cook that gives desserts life. Baking is done out of love, to share with family and friends, to see them smile. Find something you\'re passionate about and keep interested in it.');
 
 -- --------------------------------------------------------
 
@@ -253,7 +253,7 @@ CREATE TABLE `roomtype` (
 INSERT INTO `roomtype` (`TypeID`, `Name`, `Price`, `MaxGuests`, `Description`, `Spa`, `Sauna`, `Fitness`, `Lounge`, `ImageLink`) VALUES
 (1, 'Chifon', 75, 3, 'I like cinnamon rolls. but I don\'t always have time to make a pan. That\'s why I wish they would sell cinnamon roll incense. After all I\'d rather light a stick and have my roommate wake up with false hopes.', 1, 1, 1, 0, 'images/room1.jpg'),
 (2, 'Dundee', 50, 1, 'The nice thing about baking alone in the kitchen before dawn is that you can talk to yourself like a crazy person and no one suspects you\'re a crazy person.', 1, 1, 1, 0, 'images/room2.jpg'),
-(3, 'Madeleine ', 100, 4, 'If u can edit for nice description, just do it hahahha', 1, 1, 1, 1, 'images/room3.jpg'),
+(3, 'Madeleine ', 100, 4, 'I like big bundts and I cannot lie. A bad review is like baking a cake with all the best ingredients and having someone sit on it.', 1, 1, 1, 1, 'images/room3.jpg'),
 (4, 'Noumea', 70, 1, 'Pastry is different from cooking because you have to consider the chemistry, beauty and flavor. It\'s not just sugar and eggs thrown together. I tell my pastry chefs to be in tune for all of this. You have to be challenged by using secret or unusual ingredients.', 1, 0, 1, 0, 'images/room4.jpg'),
 (5, 'Criolo', 80, 2, 'Love is like a good cake. You never know when it\'s coming but you\'d better eat it when it does. Homemade with love in other words I licked the spoon and kept using it.', 1, 0, 1, 1, 'images/room5.jpg'),
 (6, 'Tarlette', 110, 4, 'Love my pastries. More than my blood sugar. Sometimes my heart says never. But my says ever? Whoever said money can\'t buy happiness has obviously not been to a bakery.', 1, 1, 1, 1, 'images/room6.jpg');
