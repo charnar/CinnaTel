@@ -354,6 +354,7 @@ h2 {
   background-size: cover;
   background-position: center;
   text-align: center;
+  backdrop-filter: blur(5px);
 
 }
 
@@ -609,7 +610,7 @@ h2 {
 
 
 /* Hotel branch room showcase */
-.room-showcase-container {
+.room-showcase-container, .profile-showcase-container {
   width: 100%;
   background-color: var(--cream);
 }
@@ -699,3 +700,61 @@ h2 {
 
 
 /* End of Hotel branch room showcase */
+
+/* Start of Profile Showcase */
+.profile-showcase-container > h1 {
+  text-align: center;
+  padding: 2em;
+  font-size: 40px;
+  font-weight: normal;
+
+}
+
+.profile-showcase-grid {
+  display: grid;
+  grid-row-gap: 1em;
+  padding-bottom: 4em;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+
+.profile-showcase  {
+  width: 400px;
+  height: 600px;
+  background-color: transparent;
+  border-radius: 10px;
+  justify-self: center;
+  /*box-shadow: 0 0px 60px 0 rgba(0, 0, 0, 0.1);*/
+
+}
+
+
+.profile-showcase > h1 {
+  margin-top: 10px;
+  font-weight: normal;
+  text-align: center;
+}
+
+.profile-showcase > h2 {
+  text-align: center;
+  width: 90%;
+  margin: auto;
+  font-weight: normal;
+  font-size: 25px;
+}
+
+
+.profile-showcase-image {
+  position: relative;
+  width: 90%;
+  height: 45%;
+  margin: auto;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 30px;
+  border-radius: 5px;
+}
+
+
+/* End Start of Profile Showcase */

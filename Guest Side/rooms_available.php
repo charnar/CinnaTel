@@ -169,7 +169,6 @@ if (isset($_POST['submit']))    {
       </div>
 
 
-
       <!-- Bottom Footer container -->
       <div class="container-bottom-footer">
         <div class="footer-section">
