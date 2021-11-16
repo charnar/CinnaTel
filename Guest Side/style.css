@@ -354,7 +354,6 @@ h2 {
   background-size: cover;
   background-position: center;
   text-align: center;
-  backdrop-filter: blur(5px);
 
 }
 
@@ -377,6 +376,12 @@ h2 {
 
 
 /* Start of Large Containers */
+.plain-container  {
+  padding-top: 6em;
+ /*WIP*/
+}
+
+
 .two-columns-container  {
   display: flex;
   flex-direction: row;
