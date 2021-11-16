@@ -14,9 +14,7 @@ if(!$result) {
 $hoteldata = $result -> fetch_array();
 $altimagelink = substr_replace($hoteldata['ImageLink'], 'alt', 13, 0);
 
-$q1 = "SELECT DISTINCT roomtype.* FROM roomtype, room
-WHERE roomtype.TypeID = room.TypeID AND room.HotelID = '$hotelid'
-GROUP BY roomtype.Price";
+$q1 = "CALL displayRooms('$hotelid')";
 
 $result1 = $mysqli -> query($q1);
 if(!$result1) {
@@ -44,7 +42,7 @@ if(!$result1) {
     <!-- Fixed navigation bar -->
       <div class="navbar">
         <!-- Top left icon -->
-        <a href="main.html" style="text-decoration: none;">
+        <a href="index.html" style="text-decoration: none;">
           <h1 class="logo">Cinnamon Hotels & Resorts</h1>
         </a>
 
@@ -56,7 +54,7 @@ if(!$result1) {
               <div>
                 <div>
                   <ul>
-                    <li><a href='main.html'>Home</a></li>
+                    <li><a href='index.html'>Home</a></li>
                     <li><a href='hotels.html'>Find a hotel</a></li>
                     <li><a href='book_room.html'>Book a room</a></li>
                     <li><a href='about.html'>About us</a></li>
@@ -146,8 +144,8 @@ if(!$result1) {
     <div class="container-bottom-footer">
       <div class="footer-section">
         <a href="about.html">About us</a>
-        <a href="about.html">Find a hotel</a>
-        <a href="about.html">Book a room</a>
+        <a href="hotels.html">Find a hotel</a>
+        <a href="book_room.html">Book a room</a>
       </div>
 
       <div class="footer-section">

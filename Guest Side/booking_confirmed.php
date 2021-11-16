@@ -48,7 +48,7 @@ $hotelcountry = $row['Country'];
     <!-- Fixed navigation bar -->
       <div class="navbar">
         <!-- Top left icon -->
-        <a href="main.html" style="text-decoration: none;">
+        <a href="index.html" style="text-decoration: none;">
           <h1 class="logo">Cinnamon Hotels & Resorts</h1>
         </a>
 
@@ -60,7 +60,7 @@ $hotelcountry = $row['Country'];
               <div>
                 <div>
                   <ul>
-                    <li><a href='main.html'>Home</a></li>
+                    <li><a href='index.html'>Home</a></li>
                     <li><a href='hotels.html'>Find a hotel</a></li>
                     <li><a href='book_room.html'>Book a room</a></li>
                     <li><a href='about.html'>About us</a></li>
@@ -102,7 +102,7 @@ $hotelcountry = $row['Country'];
 
       <div style="text-align: center; padding: 2em;">
         <h1 style="font-weight: normal">You will receive an email on your booking shortly</h1>
-        <button onclick="location.href='main.html'" class="hover-button" style="z-index: 1; margin-top: 1.25em; margin-right: 10px;">Proceed</button>
+        <button onclick="location.href='index.html'" class="hover-button" style="z-index: 1; margin-top: 1.25em; margin-right: 10px;">Proceed</button>
       </div>
 
 
@@ -111,8 +111,8 @@ $hotelcountry = $row['Country'];
       <div class="container-bottom-footer">
         <div class="footer-section">
           <a href="about.html">About us</a>
-          <a href="about.html">Find a hotel</a>
-          <a href="about.html">Book a room</a>
+          <a href="hotels.html">Find a hotel</a>
+          <a href="book_room.html">Book a room</a>
         </div>
 
         <div class="footer-section">
