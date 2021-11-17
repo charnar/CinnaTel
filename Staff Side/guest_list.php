@@ -46,7 +46,7 @@ if (isset($_POST['receptionist_submit']))  {
         $result = $mysqli -> query($q);
         $row = $result -> fetch_array();
 
-        $q = "SELECT guest.Prefix, guest.Fname, guest.Lname, booking.Adults, booking.Children, booking.DateFrom, booking.DateTo, roomtype.Name, room.No
+        $q = "SELECT guest.Prefix, guest.Fname, guest.Lname, booking.Adults, booking.Children, booking.DateFrom, booking.DateTo, roomtype.Name, room.No, booking.BookingID
         FROM guest, booking, roomsbooked, room, roomtype, hotel
         WHERE guest.GuestID = booking.GuestID
         AND booking.BookingID = roomsbooked.BookingID
@@ -70,20 +70,22 @@ if (isset($_POST['receptionist_submit']))  {
 
         <?php while($row=$result->fetch_array()){ ?>
         <!-- This is for 1 guest -->
-        <div class="guest-container">
-          <div class="guest-container-left">
-            <h1><?=$row['Prefix']?> <?=$row['Fname']?> <?=$row['Lname']?></h1>
-            <h2>Guests: <?=$row['Adults']?> Adults, <?=$row['Children']?> Children</h2>
-            <h2><?=$row['Name']?></h2>
-            <h2>Room No. <?=$row['No']?></h2>
-          </div>
+        <a style="text-decoration: none; color: var(--dark_oak_brown);" href="view_guestinfo.php?bookingid=<?=$row['BookingID']?>&roomno=<?=$row['No']?>">
+          <div class="guest-container">
+            <div class="guest-container-left">
+              <h1><?=$row['Prefix']?> <?=$row['Fname']?> <?=$row['Lname']?></h1>
+              <h2>Guests: <?=$row['Adults']?> Adults, <?=$row['Children']?> Children</h2>
+              <h2><?=$row['Name']?></h2>
+              <h2>Room No. <?=$row['No']?></h2>
+            </div>
 
-          <div class="guest-container-right" style="margin-top: auto;">
-            <h2>Check-in: <?=$row['DateFrom']?></h2>
-            <h2>Check-out: <?=$row['DateTo']?></h2>
-          </div>
+            <div class="guest-container-right" style="margin-top: auto;">
+              <h2>Check-in: <?=$row['DateFrom']?></h2>
+              <h2>Check-out: <?=$row['DateTo']?></h2>
+            </div>
 
-        </div>
+          </div>
+        </a>
         <!-- End of "this is for 1 guest" -->
         <?php } ?>
 

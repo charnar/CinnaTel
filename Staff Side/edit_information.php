@@ -1,7 +1,7 @@
 <?php
 require_once('connect.php');
 
-if(isset($_POST['edit-submit'])) {
+if(isset($_POST['edit-hotel'])) {
   $hotelID = $_POST['hotelID'];
   $hotelname = $_POST['hotelname'];
   $email = $_POST['email'];

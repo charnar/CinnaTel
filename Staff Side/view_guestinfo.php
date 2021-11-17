@@ -3,6 +3,7 @@
 require_once('connect.php');
 
 $bookingid = $_GET['bookingid'];
+$roomno = $_GET['roomno'];
 
 $q = "CALL getGuestBooking('$bookingid')";
 
@@ -35,44 +36,25 @@ $TotalCost = $row['Price'] * ($days);
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>CinnaTel | Booking information</title>
-      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="stylestaff.css">
   </head>
 
   <body>
     <!-- Fixed navigation bar -->
       <div class="navbar">
         <!-- Top left icon -->
-        <a href="index.html" style="text-decoration: none;">
-          <h1 class="logo">Cinnamon Hotels & Resorts</h1>
-        </a>
-
-        <!-- Top right hamburger menu -->
-        <div class=menu-wrap>
-            <input type="checkbox" class="toggler">
-            <div class="hamburger"><div></div></div>
-            <div class="menu">
-              <div>
-                <div>
-                  <ul>
-                    <li><a href='index.html'>Home</a></li>
-                    <li><a href='hotels.html'>Find a hotel</a></li>
-                    <li><a href='book_room.html'>Book a room</a></li>
-                    <li><a href='about.html'>About us</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-        </div>
+        <a class="nav-button" href="javascript: history.go(-1)">Back</a>
+        <a class="nav-button" href="index.html">Log out</a>
       </div>
 
-    <!-- Home screen image and text -->
-      <div class="background-splash" style="background-image: url(images/cover1.jpg)">
-        <h1 style="top: 40%">Booking information</h1>
-      </div>
+      <!-- used to make room from header -->
+      <div style="width: 100%; margin-top: 60px;"></div>
+
+      <h1 class="page-heading">Guest information</h1>
 
 
       <!-- Booking Information Container -->
-      <div style="postion: relative; margin-top: -200px;" class="room-container">
+      <div style="postion: relative;" class="room-container">
         <div class="room-container-left">
           <div class="room-image" style="background-image: url(<?php echo $row['ImageLink'];?>)"></div>
         </div>
@@ -83,7 +65,7 @@ $TotalCost = $row['Price'] * ($days);
             <h2>Phone: <span><?php echo $row['Phone'];?></span></h2>
 
             <h1 style="padding-top: 1em;"><?php echo $row['Name'];?>, <?php echo $row['Country'];?></h1>
-            <h2 style="font-size: 25px; padding-bottom: 0.6em;"><?php echo $row['RoomName'];?> Room</h1>  <!-- Name of room type-->
+            <h2 style="font-size: 25px; padding-bottom: 0.6em;"><?php echo $row['RoomName'];?> Room, Room No. <?php echo $roomno;?></h1>  <!-- Name of room type-->
             <h2>Guests: <span><?php echo $row['Adults'];?> Adults, <?php echo $row['Children'];?> Children</span></h2>
             <h2>Check-in: <span><?php echo $row['DateFrom'];?></span></h2>
             <h2>Check-out: <span><?php echo $row['DateTo'];?></span></h2>
@@ -97,38 +79,7 @@ $TotalCost = $row['Price'] * ($days);
 
 
 
-      <!-- Bottom Footer container -->
-      <div class="container-bottom-footer">
-        <div class="footer-section">
-          <a href="about.html">About us</a>
-          <a href="hotels.html">Find a hotel</a>
-          <a href="book_room.html">Book a room</a>
-        </div>
 
-        <div class="footer-section">
-          <div class="footer-information">
-            <i style="font-size:25px;color:white;" class='fas fa-map-marker-alt'></i>
-            <h1 style="margin-top: 17px; margin-left: 5px;">Main Headquarters</h1>
-            <h2>3/325 Final Road, Cinnamon Islands</h2>
-          </div>
-
-          <div class="footer-information">
-            <i style="font-size:25px;color:white;" class='fas fa-envelope-open'></i>
-            <h1 style="margin-top: 17px">Email</h1>
-            <h2>support@cinnatel.org</h2>
-          </div>
-
-        </div>
-
-        <div class="footer-section">
-          <div class="footer-information">
-            <i style="font-size:25px;color:white;" class='fas fa-phone'></i>
-            <h1 style="margin-top: 17px">Phone</h1>
-            <h2>02-420-6969</h2>
-          </div>
-        </div>
-      </div>
-      <!-- End of Bottom Footer container -->
 
   </body>
 </html>

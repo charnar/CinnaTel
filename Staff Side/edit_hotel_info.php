@@ -90,7 +90,7 @@ $row = $result->fetch_array();
           <input type="hidden" name="hotelID" value=<?php echo $hotelID;?>>
 
           <div style="position: relative; margin-top: 2em; text-align: center;">
-            <button type="submit" name="edit-submit" class="hover-button" style="padding: 7.5px 60px; font-size: 18px; z-index: 1">Apply</button>
+            <button type="submit" name="edit-hotel" class="hover-button" style="padding: 7.5px 60px; font-size: 18px; z-index: 1">Apply</button>
           </div>
         </ul>
       </form>
