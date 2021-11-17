@@ -23,6 +23,5 @@ Edit Hotel Information | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_
 Guest List | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 View Guest Info | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 Staff List | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
-Edit Staff Info | :x: | :x: | :x:
-View Staff Info | :x: | :x: | :x:
-Move Staff Hotel Branch | :x: | :x: | :x:
+Edit Staff Info | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
+Move Staff Hotel Branch | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
