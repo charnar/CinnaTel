@@ -21,4 +21,10 @@ Check-in | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 Check-out | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 Edit Hotel Information | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 Guest List | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
+Edit Guest Info | :x: | :x: | :x:
+View Guest Info | :x: | :x: | :x:
 Staff List | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
+Edit Staff Info | :x: | :x: | :x:
+View Staff Info | :x: | :x: | :x:
+Move Staff Hotel Branch | :x: | :x: | :x:
+
