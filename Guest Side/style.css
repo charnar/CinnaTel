@@ -378,8 +378,30 @@ h2 {
 /* Start of Large Containers */
 .plain-container  {
   padding-top: 6em;
- /*WIP*/
+  padding-bottom: 6em;
+  text-align: center;
 }
+
+
+.plain-container > h1 {
+  font-size: 40px;
+  font-weight: normal;
+}
+
+.plain-container > h2 {
+  padding-top: 1em;
+  font-weight: normal;
+}
+
+.image-plain-container {
+  height: 600px;
+  width: 60%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: auto;
+  margin-top: 2em;
+}
+
 
 
 .two-columns-container  {
