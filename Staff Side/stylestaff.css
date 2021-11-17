@@ -470,6 +470,17 @@ canvas  {
   font-size: 18px;
 }
 
+.hotel-edit-form > li > select {
+  margin-right: 10px;
+  margin-bottom: 20px;
+  padding: 5px 0px 5px 0;
+  text-indent: 10px;
+  font-size: 18px;
+  width: 80%;
+}
+
+
+
 .hotel-edit-form > li > textarea {
   font-size: 18px;
 }
@@ -478,9 +489,10 @@ canvas  {
 .input-long {
   margin-right: 10px;
   margin-bottom: 20px;
-  padding: 5px 220px 5px 0;
+  padding: 5px 0px 5px 0;
   text-indent: 10px;
   font-size: 18px;
+  width: 100%;
 }
 
 

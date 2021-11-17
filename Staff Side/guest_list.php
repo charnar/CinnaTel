@@ -38,6 +38,21 @@ if (isset($_POST['receptionist_submit']))  {
       <!-- used to make room from header -->
       <div style="width: 100%; margin-top: 60px;"></div>
 
+      <?php if (isset($_POST['manager_submit']))  {
+        $q = "SELECT * FROM staff WHERE HotelID = $hotelID";
+        $result = $mysqli -> query($q);
+
+        $qHotelName = "SELECT Name, Province, Country FROM hotel WHERE HotelID = $hotelID";
+        $result1 = $mysqli -> query($qHotelName);
+        $hotelrow=$result1->fetch_array();
+
+      ?>
+      <div class="hotel-heading" style="position: relative; text-align: center; padding-top: 2em; ">
+        <h1 class="hotel-name"><?php echo $hotelrow['Name'];?></h1>
+        <h2 class="hotel-location"><?php echo $hotelrow['Province'];?>, <?php echo $hotelrow['Country'];?></h2>
+      </div>
+      <?php } ?>
+
       <h1 class="page-heading">Guest List</h1>
 
       <?php

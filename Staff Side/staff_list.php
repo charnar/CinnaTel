@@ -3,9 +3,10 @@
 require_once('connect.php');
 
 if(isset($_POST['submit'])) {
-  $hotelID = $_POST['submit'];
+  $_SESSION['hotelid'] = $_POST['submit'];
 }
 
+$hotelID = $_SESSION['hotelid'];
 
 $q = "SELECT * FROM staff WHERE HotelID = $hotelID";
 $result = $mysqli -> query($q);
@@ -53,21 +54,23 @@ $hotelrow=$result1->fetch_array();
 
         <!-- This is for 1 guest -->
         <?php while($row=$result->fetch_array()){ ?>
-        <div class="guest-container">
-          <div class="guest-container-left">
-            <h1><?php echo $row['Prefix']?> <?php echo $row['Fname']?> <?php echo $row['Lname']?></h1>
-            <h2 style="font-size: 22.5px;"><?php echo $row['Position']?></h2>
-            <br>
-            <h2><?php echo $row['City']?>, <?php echo $row['Country']?></h2>
+        <a style="text-decoration: none; color: var(--dark_oak_brown);" href="edit_staff_info.php?staffid=<?=$row['StaffID']?>">
+          <div class="guest-container">
+            <div class="guest-container-left">
+              <h1><?php echo $row['Prefix']?> <?php echo $row['Fname']?> <?php echo $row['Lname']?></h1>
+              <h2 style="font-size: 22.5px;"><?php echo $row['Position']?></h2>
+              <br>
+              <h2><?php echo $row['City']?>, <?php echo $row['Country']?></h2>
 
+            </div>
+
+            <div class="guest-container-right" style="margin-top: auto;">
+              <h2>Phone: <?php echo $row['Phone']?></h2>
+              <h2>Email: <?php echo $row['Email']?></h2>
+
+            </div>
           </div>
-
-          <div class="guest-container-right" style="margin-top: auto;">
-            <h2>Phone: <?php echo $row['Phone']?></h2>
-            <h2>Email: <?php echo $row['Email']?></h2>
-
-          </div>
-        </div>
+        </a>
 
         <?php } ?>
         <!-- End of "this is for 1 guest" -->

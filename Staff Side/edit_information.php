@@ -28,4 +28,41 @@ if(isset($_POST['edit-hotel'])) {
   header("Location: manager_hotel_home.php");
 }
 
+if(isset($_POST['edit-staff'])) {
+  $staffid = $_POST['staffid'];
+  $fname = $_POST['fname'];
+  $lname = $_POST['lname'];
+  $email = $_POST['email'];
+  $phone = $_POST['phonenumber'];
+  $city = $_POST['city'];
+  $country = $_POST['country'];
+  $position = $_POST['position'];
+  $hotelbranchid = $_POST['hotelbranch'];
+
+  /* Print to test post values
+  echo $staffid;
+  echo $fname;
+  echo $lname;
+  echo $email;
+  echo $phone;
+  echo $city;
+  echo $country;
+  echo $position;
+  echo $hotelbranch;
+  */
+
+  $q = "UPDATE staff SET HotelID = '$hotelbranchid', Fname = '$fname', Lname = '$lname', Email = '$email',
+  Phone = '$phone', City = '$city', Country = '$country', Position = '$position'
+  WHERE StaffID = '$staffid';";
+
+  $result=$mysqli->query($q);
+  if(!$result){
+    echo "UPDATE failed. Error: ".$mysqli->error ;
+    return false;
+  }
+
+  header("Location: manager_hotel_home.php");
+
+}
+
 ?>

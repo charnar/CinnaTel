@@ -37,6 +37,11 @@ $row = $result->fetch_array();
 
       <div style="width: 100%; margin-top: 60px;"></div>
 
+      <div class="hotel-heading" style="position: relative; text-align: center; padding-top: 2em; ">
+        <h1 class="hotel-name"><?php echo $row['Name'];?></h1>
+        <h2 class="hotel-location"><?php echo $row['Province'];?>, <?php echo $row['Country'];?></h2>
+      </div>
+
       <h1 class="page-heading">Edit Hotel Information</h1>
       <!-- Hotel Information Form -->
 
