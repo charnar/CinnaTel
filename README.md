@@ -26,3 +26,7 @@ View Guest Info | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 Staff List | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 Edit Staff Info | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 Move Staff Hotel Branch | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
+Add New Room Type | :x: | :x: | :x:
+Edit Room Type | :x: | :x: | :x: 
+
+
