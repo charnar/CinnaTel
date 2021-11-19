@@ -53,6 +53,13 @@ $TotalCost = $price * ($days);
       <link rel="stylesheet" href="style.css">
   </head>
 
+  <style>
+    body  {
+      background-color: var(--cream);
+    }
+
+  </style>
+
   <body>
     <!-- Fixed navigation bar -->
       <div class="navbar">
@@ -106,7 +113,8 @@ $TotalCost = $price * ($days);
             <form action="booking_insert.php" method="post"> <!-- Submit button *change the value to the roomType.TypeID so it can be posted -->
 
                 <h1 style="font-weight: normal;">Guest information</h1>
-                <select id="prefix" name="prefix">
+                <select id="prefix" name="prefix" required>
+                  <option hidden selected>Prefix</option>
                   <option value="Mr.">Mr.</option>
                   <option value="Ms.">Ms.</option>
                   <option value="Mrs.">Mrs.</option>
@@ -114,13 +122,13 @@ $TotalCost = $price * ($days);
                   <option value="Prof.">Prof.</option>
                 </select>
 
-                <input type="text" id="fname" name="fname" placeholder="First name">
-                <input type="text" id="lname" name="lname" placeholder="Last name">
-                <input type="text" id="email" name="email" placeholder="Email address">
-                <input type="text" id="phonenum" name="phonenum" placeholder="Phone number">
+                <input type="text" id="fname" name="fname" placeholder="First name" required>
+                <input type="text" id="lname" name="lname" placeholder="Last name" required>
+                <input type="text" id="email" name="email" placeholder="Email address" required>
+                <input type="text" id="phonenum" name="phonenum" placeholder="Phone number" required>
 
-                <select id="country" name="country">
-                  <option>Country</option>
+                <select id="country" name="country" required>
+                  <option hidden selected>Country</option>
           				<option value="Afganistan">Afghanistan</option>
           				<option value="Albania">Albania</option>
           				<option value="Algeria">Algeria</option>
@@ -371,7 +379,8 @@ $TotalCost = $price * ($days);
                 </select>
 
                 <h1 style="padding-top: 1.2em; font-weight: normal;">Payment information</h1>
-                <select id="method" name="method" >
+                <select id="method" name="method" required>
+                  <option selected></option>
                   <option value="Credit Card">Credit Card</option>
                   <option value="Bank Transfer">Bank Transfer</option>
                   <option value="Kidney">Your Kidney</option>

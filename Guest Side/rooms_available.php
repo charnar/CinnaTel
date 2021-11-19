@@ -51,7 +51,15 @@ if (isset($_POST['submit']))    {
       <link rel="stylesheet" href="style.css">
   </head>
 
+  <style>
+    body  {
+      background-color: var(--cream);
+    }
+
+  </style>
+
   <body>
+
     <!-- Fixed navigation bar -->
       <div class="navbar">
         <!-- Top left icon -->

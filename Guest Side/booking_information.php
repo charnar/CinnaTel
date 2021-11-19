@@ -38,6 +38,7 @@ $TotalCost = $row['Price'] * ($days);
       <link rel="stylesheet" href="style.css">
   </head>
 
+
   <body>
     <!-- Fixed navigation bar -->
       <div class="navbar">

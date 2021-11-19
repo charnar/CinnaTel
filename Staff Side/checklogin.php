@@ -13,7 +13,7 @@
   $result = $mysqli -> query($q);
 
    while($row=$result->fetch_array()){
-     if (($row['Username'] == $username) and ($row['Password'] == $password)) {
+     if (($row['Username'] == $username) and ($row['Password'] == md5($password))) {
        $_SESSION['HotelID'] = $row['HotelID'];
 
        if ($row['Position'] == 'Receptionist')  {
