@@ -562,6 +562,16 @@ canvas  {
   color: var(--dark_oak_brown);
 }
 
+.service-icon-container  {
+  position: relative;
+  padding-top: 1em;
+}
+
+.service-icon-container > i, span {
+  color: var(--brown);
+  font-size: 22px;
+
+}
 
 @media (max-width: 1400px)  {
   .room-container-left, .room-container-right{

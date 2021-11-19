@@ -57,6 +57,9 @@ $row = $result->fetch_array();
 
           <button type="button" onclick="window.location.href='edit_hotel_info.php'" class="hover-button" style="z-index: 1;  margin: 1em;">Edit Hotel Information</button>
 
+          <button type="button" onclick="window.location.href='roomtype_list.php?hotelid=<?php echo $hotelID;?>'" class="hover-button" style="z-index: 1;  margin: 1em;">Edit Room Types</button>
+
+
 
 
         </div>
