@@ -101,7 +101,7 @@ $result1 = $mysqli -> query($qRoomType);
             <?php }?>
 
 
-            <button type="button" onclick="window.location.href='edit_room_info.php?typeid=<?php echo $roomrow['TypeID'];?>'" class="hover-button" style="z-index: 1;  margin-top: 1.25em;">Edit Information</button>
+            <button type="button" onclick="window.location.href='edit_room_info.php?typeid=<?php echo $roomrow['TypeID'];?>&hotelid=<?php echo $hotelID;?>'" class="hover-button" style="z-index: 1;  margin-top: 1.25em;">Edit Information</button>
 
 
           </div>

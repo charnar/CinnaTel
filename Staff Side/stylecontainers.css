@@ -1,0 +1,118 @@
+/* Hotel Room Container */
+.room-table  {
+  position: relative;
+  top: -200px;
+  width: 100%;
+  background-color: transparent;
+}
+
+.room-container, .room-form-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 65%;
+  border: white solid 2px;
+  margin-bottom: 1em;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0px 60px 0 rgba(0, 0, 0, 0.2);
+}
+
+.room-container-right > h1 {
+  font-weight: normal;
+}
+
+.room-container-right > h2 {
+  font-weight: normal;
+  padding-top: 0.2em;
+}
+
+.room-form-container {
+  width: 80%;
+}
+
+.room-container-left, .room-form-left {
+  flex: 40%;
+  padding: 2em;
+}
+
+.room-container-right, .room-form-right  {
+  flex: 60%;
+  padding: 2em;
+}
+
+.room-image  {
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-repeat: none;
+  background-position: center;
+  border-radius: 5px;
+}
+
+.service-icon-container  {
+  position: relative;
+  padding-top: 1em;
+}
+
+.service-icon-container > i, span {
+  color: var(--brown);
+  font-size: 22px;
+
+}
+
+.room-form-left > h2 > span {
+  color: var(--dark_oak_brown);
+}
+
+.room-form-right > form > h1 {
+
+}
+
+.room-form-right > form > select {
+  margin-right: 10px;
+  margin-top: 20px;
+  padding: 10px 30px;
+  font-size: 20px;
+}
+
+.room-form-right > form > input {
+  margin-top: 20px;
+  margin-right: 10px;
+  padding: 10px 30px;
+  font-size: 20px;
+}
+
+
+
+.room-form-right > form > div > input {
+  margin-right: 10px;
+  margin-top: 20px;
+  padding: 10px 30px;
+  font-size: 20px;
+}
+
+
+.room-form-right > form > textarea {
+  margin-top: 20px;
+  margin-right: 10px;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.room-container-right > h2 > span {
+  color: var(--dark_oak_brown);
+}
+
+
+@media (max-width: 1400px)  {
+  .room-container-left, .room-container-right{
+    flex: 100%;
+  }
+}
+
+.room-container-right > p {
+  padding-top: 1em;
+  font-size: 20px;
+}
+/* End of Hotel Room Container for booking */

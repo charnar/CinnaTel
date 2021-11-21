@@ -380,7 +380,7 @@ $TotalCost = $price * ($days);
 
                 <h1 style="padding-top: 1.2em; font-weight: normal;">Payment information</h1>
                 <select id="method" name="method" required>
-                  <option selected></option>
+                  <option hidden selected></option>
                   <option value="Credit Card">Credit Card</option>
                   <option value="Bank Transfer">Bank Transfer</option>
                   <option value="Kidney">Your Kidney</option>
