@@ -111,7 +111,7 @@ $TotalCost = $price * ($days);
           </div>
 
           <div class="room-form-right">
-            <form action="booking_insert.php" method="post"> <!-- Submit button *change the value to the roomType.TypeID so it can be posted -->
+            <form action="booking_insert.php" method="post" enctype="multipart/form-data"> <!-- Submit button *change the value to the roomType.TypeID so it can be posted -->
 
                 <h1 style="font-weight: normal;">Guest information</h1>
                 <select id="prefix" name="prefix" required>
@@ -389,9 +389,11 @@ $TotalCost = $price * ($days);
                   <option value="Your Soul">Your Soul</option>
                 </select>
 
+                <input type="text" id="discount" name="discount" placeholder="Discount code">
+
 
                 <div id="creditmethod" style="display: none;">
-                  <input type="text" id="Ricardo" name="cardnum" placeholder="Card number">
+                  <input type="text" id="cardnum" name="cardnum" placeholder="Card number">
                   <input type="text" id="exp" name="exp" placeholder="Expiration date (MM/YY)">
                   <input type="text" id="CV" name="CV" placeholder="CV2">
                 </div>
@@ -412,6 +414,8 @@ $TotalCost = $price * ($days);
                 <input type="hidden" name="roomname" value="<?php echo $roomname;?>">
                 <input type="hidden" name="imagelink" value="<?php echo $imagelink;?>">
 
+                <h1 style="padding-top: 1.2em; font-weight: normal;">Additional information</h1>
+                <textarea name="extrainfo" rows="12" cols="40" placeholder="e.g I am allergic to peanuts"></textarea>
                 <h1></h1>
 
                 <button type=button onclick="history.go(-1)" class="hover-button" style="z-index: 1; margin-right: 10px; margin-top: 1.25em;">Go Back</button>

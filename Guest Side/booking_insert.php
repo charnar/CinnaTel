@@ -24,6 +24,8 @@ if (isset($_POST['submit']))  {
 
   //Payment information SESSION from guest_information.php
   $_SESSION['method'] = $_POST['method'];
+  $_SESSION['discount'] = $_POST['discount'];
+  $_SESSION['extrainfo'] = $_POST['extrainfo'];
 
 }
 
@@ -45,6 +47,25 @@ $phonenum = $_SESSION['phonenum'];
 $country = $_SESSION['country'];
 
 $method = $_SESSION['method'];
+
+
+if ($_SESSION['discount'] == NULL)  {
+  $discount = NULL;
+}
+
+else {
+  $discount = $_SESSION['discount'];
+}
+
+
+if ($_SESSION['extrainfo'] == NULL) {
+  $extrainfo = NULL;
+}
+
+else {
+  $extrainfo = str_replace("'", "\'", $_SESSION['extrainfo']);
+}
+
 
 
 if ($_SESSION['method'] == "Kidney") {
@@ -80,9 +101,19 @@ $fetchgid=$result2->fetch_array();
 $gid = $fetchgid['GuestID']; // use this as GuestID
 
 
+
+//process the bank payment slip if many
+if (is_uploaded_file($_FILES['bankslip']['tmp_name']))  {
+  $filename = 'paymentbankslip'.$gid.'';
+  $directory = 'bankslips/'.$filename.'.jpg';
+  //store the bank slip in the bankslips folder
+  move_uploaded_file($_FILES["bankslip"]["tmp_name"], $directory);
+}
+
+
 // insert data to payment table
-$q3="INSERT INTO payment(Method, Date, Status)
-VALUES ('$method', CURRENT_TIMESTAMP, '$paymentstatus')";
+$q3="INSERT INTO payment(Method, Date, Status, BankSlip)
+VALUES ('$method', CURRENT_TIMESTAMP, '$paymentstatus', '$directory')";
 
 $result3 = $mysqli -> query($q3);
 if(!$result3) {
@@ -103,8 +134,8 @@ $pid = $fetchpid['PaymentID']; // use this as PaymentID
 
 
 // insert data to booking table
-$q5="INSERT INTO booking(HotelID, GuestID, PaymentID, DateFrom, DateTo, Adults, Children, ReserveDate, DiscountCode)
-VALUES ('$hotelid', '$gid', '$pid', '$checkin', '$checkout', '$adults', '$children', CURRENT_TIMESTAMP, 'LIKEASOMEBODY')";
+$q5="INSERT INTO booking(HotelID, GuestID, PaymentID, DateFrom, DateTo, Adults, Children, ReserveDate, DiscountCode, ExtraInfo)
+VALUES ('$hotelid', '$gid', '$pid', '$checkin', '$checkout', '$adults', '$children', CURRENT_TIMESTAMP, '$discount', '$extrainfo')";
 
 $result5 = $mysqli -> query($q5);
 if(!$result5) {
