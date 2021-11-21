@@ -51,6 +51,7 @@ $TotalCost = $price * ($days);
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>CinnaTel | Guest information</title>
       <link rel="stylesheet" href="style.css">
+      <script src="script.js"></script>
   </head>
 
   <style>
@@ -114,7 +115,7 @@ $TotalCost = $price * ($days);
 
                 <h1 style="font-weight: normal;">Guest information</h1>
                 <select id="prefix" name="prefix" required>
-                  <option hidden selected>Prefix</option>
+                  <option hidden selected></option>
                   <option value="Mr.">Mr.</option>
                   <option value="Ms.">Ms.</option>
                   <option value="Mrs.">Mrs.</option>
@@ -379,7 +380,7 @@ $TotalCost = $price * ($days);
                 </select>
 
                 <h1 style="padding-top: 1.2em; font-weight: normal;">Payment information</h1>
-                <select id="method" name="method" required>
+                <select onchange="paymentMethodCheck(this);" id="method" name="method" required>
                   <option hidden selected></option>
                   <option value="Credit Card">Credit Card</option>
                   <option value="Bank Transfer">Bank Transfer</option>
@@ -388,25 +389,33 @@ $TotalCost = $price * ($days);
                   <option value="Your Soul">Your Soul</option>
                 </select>
 
-                <div class="">
+
+                <div id="creditmethod" style="display: none;">
                   <input type="text" id="Ricardo" name="cardnum" placeholder="Card number">
                   <input type="text" id="exp" name="exp" placeholder="Expiration date (MM/YY)">
                   <input type="text" id="CV" name="CV" placeholder="CV2">
                 </div>
 
-                  <input type="hidden" name="hotelid" value="<?php echo $hotelid;?>">
-                  <input type="hidden" name="typeid" value="<?php echo $typeid;?>">
-                  <input type="hidden" name="checkin" value="<?php echo $checkin;?>">
-                  <input type="hidden" name="checkout" value="<?php echo $checkout;?>">
-                  <input type="hidden" name="adults" value="<?php echo $adults;?>">
-                  <input type="hidden" name="children" value="<?php echo $children;?>">
-                  <input type="hidden" name="price" value="<?php echo $price;?>">
-                  <input type="hidden" name="roomname" value="<?php echo $roomname;?>">
-                  <input type="hidden" name="imagelink" value="<?php echo $imagelink;?>">
+                <div id="bankmethod" style="display: none; margin-top: 20px;">
+                  <label for="bankslip"><i class="fas fa-upload" style="margin-top: 10px; margin-bottom: 10px; color: var(--dark_blue); margin-right: 10px;"></i>Upload Bank Slip<label>
+                  <input type="file" id="bankslip" name="bankslip">
+                </div>
 
 
-                  <button type=button onclick="history.go(-1)" class=hover-button style="z-index: 1; margin-right: 10px; margin-top: 1.25em;">Go Back</button>
-                  <button type="submit" name="submit" class="hover-button" style="z-index: 1; margin-top: 1.25em; margin-right: 10px;">Confirm booking</button>
+                <input type="hidden" name="hotelid" value="<?php echo $hotelid;?>">
+                <input type="hidden" name="typeid" value="<?php echo $typeid;?>">
+                <input type="hidden" name="checkin" value="<?php echo $checkin;?>">
+                <input type="hidden" name="checkout" value="<?php echo $checkout;?>">
+                <input type="hidden" name="adults" value="<?php echo $adults;?>">
+                <input type="hidden" name="children" value="<?php echo $children;?>">
+                <input type="hidden" name="price" value="<?php echo $price;?>">
+                <input type="hidden" name="roomname" value="<?php echo $roomname;?>">
+                <input type="hidden" name="imagelink" value="<?php echo $imagelink;?>">
+
+                <h1></h1>
+
+                <button type=button onclick="history.go(-1)" class="hover-button" style="z-index: 1; margin-right: 10px; margin-top: 1.25em;">Go Back</button>
+                <button type="submit" name="submit" class="hover-button" style="z-index: 1; margin-top: 1.25em; margin-right: 10px;">Confirm booking</button>
             </form>
 
           </div>
