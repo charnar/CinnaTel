@@ -50,7 +50,7 @@ $result1 = $mysqli -> query($qBranch);
 
 
 
-      <form action="edit_information.php" method="post">
+      <form action="update_information.php" method="post">
         <ul class="hotel-edit-form">
           <li>
             <label for="fname">Name</label>

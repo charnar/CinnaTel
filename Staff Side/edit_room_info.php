@@ -53,10 +53,10 @@ $roomrow = $result1 -> fetch_array();
       <!-- Room Edit Information Form -->
 
 
-      <form action="edit_information.php" method="post" enctype="multipart/form-data">
+      <form action="update_information.php" method="post" enctype="multipart/form-data">
         <ul class="hotel-edit-form">
           <li>
-            <label onclick="document.getElementById('roomimage').click()" class="room-image"; style="background-image: url('<?php echo $roomrow['ImageLink']?>'); margin-bottom: 20px; cursor: pointer;"></label>
+            <label onclick="document.getElementById('roomimage').click()" class="room-click-image"; style="background-image: url('<?php echo $roomrow['ImageLink']?>'); margin-bottom: 20px; cursor: pointer;"></label>
             <input type="file" id="roomimage" name="roomimage" style="display: none;"/>
           </li>
 
@@ -77,6 +77,7 @@ $roomrow = $result1 -> fetch_array();
 
 
           <input type="hidden" name="typeid" value=<?php echo $typeid;?>>
+          <input type="hidden" name="hotelid" value=<?php echo $hotelid;?>>
 
           <div style="position: relative; margin-top: 2em; text-align: center;">
             <button type="submit" name="edit-roomtype" class="hover-button" style="padding: 7.5px 60px; font-size: 18px; z-index: 1">Apply</button>
