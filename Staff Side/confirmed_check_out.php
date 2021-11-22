@@ -37,20 +37,17 @@ require_once('connect.php');
             $bookid = $_POST['bookid'];
             $roomid = $_POST['roomid'];
 
+
             $q = "SELECT guest.Prefix, guest.Fname, guest.Lname, booking.Adults, booking.Children, roomtype.Name, roomtype.Price,
             booking.DateFrom ,booking.DateTo ,payment.Method, room.No
-            FROM guest, booking, roomsbooked, room, roomtype, payment, hotel
-            WHERE guest.guestID = booking.guestID
+            FROM guest, booking, roomsbooked, room, roomtype, payment
+            WHERE guest.GuestID = booking.GuestID
+            AND payment.PaymentID = booking.PaymentID
             AND booking.BookingID = roomsbooked.BookingID
             AND roomsbooked.TypeID = roomtype.TypeID
-            AND booking.HotelID = hotel.HotelID
-            AND booking.PaymentID = payment.PaymentID
             AND roomsbooked.RoomID = room.RoomID
-            AND roomtype.TypeID = room.TypeID
-            AND hotel.HotelID = room.HotelID
-            AND hotel.HotelID = '$hotelid'
-            AND guest.guestID = '$guestid'
             AND booking.BookingID = '$bookid'";
+
 
             $result = $mysqli -> query($q);
             if(!$result){
