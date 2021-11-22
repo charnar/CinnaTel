@@ -38,10 +38,10 @@ $TotalCost = $row['Price'] * ($days);
       <title>CinnaTel | Booking information</title>
       <link rel="stylesheet" href="stylestaff.css">
       <link rel="stylesheet" href="stylecontainers.css">
+      <script src="staffscript.js"></script>
   </head>
 
   <body>
-    <script src="staffscript.js"></script>
     <!-- Fixed navigation bar -->
       <div class="navbar">
         <!-- Top left icon -->
