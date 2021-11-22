@@ -25,7 +25,7 @@ Check-out | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 Edit Hotel Information | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 Guest List | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 View Guest Info | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
-View Payment Info | :x: | :x: | :x:
+View Payment Info | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 Staff List | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 Edit Staff Info | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 Move Staff Hotel Branch | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
