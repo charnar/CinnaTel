@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2021 at 07:14 PM
+-- Generation Time: Nov 22, 2021 at 05:07 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -88,9 +88,7 @@ INSERT INTO `booking` (`BookingID`, `HotelID`, `GuestID`, `PaymentID`, `DateFrom
 (9, 2, 9, 9, '2021-11-13', '2021-11-16', 1, 0, '2021-11-07', 'BAGUETTE', ''),
 (10, 2, 10, 10, '2021-11-07', '2021-11-11', 2, 0, '2021-11-04', 'ECLAIR', ''),
 (11, 2, 11, 11, '2021-11-08', '2021-11-11', 2, 0, '2021-11-05', 'AUBONPAIN', ''),
-(12, 2, 12, 12, '2021-11-10', '2021-11-13', 2, 2, '2021-11-04', 'IMINPAIN', ''),
-(27, 1, 31, 31, '2021-11-10', '2021-11-13', 1, 1, '2021-11-22', 'THEMOON', 'I\'m not allergic to peanuts'),
-(28, 1, 32, 32, '2021-11-09', '2021-11-13', 1, 3, '2021-11-22', 'SHAMALA', 'OCTOSHOCK');
+(12, 2, 12, 12, '2021-11-10', '2021-11-13', 2, 2, '2021-11-04', 'IMINPAIN', '');
 
 -- --------------------------------------------------------
 
@@ -124,9 +122,7 @@ INSERT INTO `guest` (`GuestID`, `Fname`, `Lname`, `Prefix`, `Phone`, `Email`, `C
 (9, 'Burr', 'Ito', 'Mr.', '0155422782', 'burrito@g.siit.tu.ac.th', 'Mexico'),
 (10, 'Tar', 'Tare', 'Dr.', '1349293829', 'tatare@g.siit.tu.ac.th', 'France'),
 (11, 'Aglio', 'E. Olio', 'Mr.', '8478123901', 'aglio_olio@g.siit.tu.ac.th', 'Italy'),
-(12, 'Oui', 'Baguette', 'Mrs.', '8237818920', 'oui_baguette@g.siit.tu.ac.th', 'France'),
-(31, 'Johnny', 'Sins', 'Mr.', '1231231', 'john@gmail.com', 'Anguilla'),
-(32, 'Octo', 'Gonapus', 'Dr.', '1235412', 'oct@gmail.com', 'Angola');
+(12, 'Oui', 'Baguette', 'Mrs.', '8237818920', 'oui_baguette@g.siit.tu.ac.th', 'France');
 
 -- --------------------------------------------------------
 
@@ -186,9 +182,7 @@ INSERT INTO `payment` (`PaymentID`, `Method`, `Date`, `Status`, `BankSlip`) VALU
 (9, 'Bank Transfer', '2021-11-07', 1, NULL),
 (10, 'Crypto', '2021-11-04', 1, NULL),
 (11, 'Credit Card', '2021-11-05', 1, NULL),
-(12, 'My Soul', '2021-11-04', 1, NULL),
-(31, 'Bank Transfer', '2021-11-22', 1, 'bankslips/paymentbankslip31.jpg'),
-(32, 'Credit Card', '2021-11-22', 1, '');
+(12, 'My Soul', '2021-11-04', 1, NULL);
 
 --
 -- Triggers `payment`
@@ -271,9 +265,7 @@ INSERT INTO `roomsbooked` (`BookingID`, `TypeID`, `RoomID`, `Status`) VALUES
 (9, 4, NULL, 0),
 (10, 5, 13, 1),
 (11, 5, 15, 1),
-(12, 6, 16, 1),
-(27, 1, NULL, 0),
-(28, 3, NULL, 0);
+(12, 6, 16, 1);
 
 -- --------------------------------------------------------
 
@@ -415,13 +407,13 @@ ALTER TABLE `staff`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `BookingID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `BookingID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `guest`
 --
 ALTER TABLE `guest`
-  MODIFY `GuestID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `GuestID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `hotel`
@@ -433,7 +425,7 @@ ALTER TABLE `hotel`
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `PaymentID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `PaymentID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `room`
