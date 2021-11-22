@@ -72,7 +72,7 @@ $hotelcountry = $row['Country'];
       </div>
 
     <!-- Home screen image and text -->
-      <div class="background-splash" style="background-image: url(images/cover1.jpg)">
+      <div class="background-splash" style="background-image: url('../images/cover1.jpg')">
         <h1 style="top: 40%">Booking confirmed</h1>
       </div>
 

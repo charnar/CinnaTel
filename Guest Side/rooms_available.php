@@ -87,7 +87,7 @@ if (isset($_POST['submit']))    {
       </div>
 
     <!-- Home screen image and text -->
-      <div class="background-splash" style="background-image: url(images/cover2.jpg)">
+      <div class="background-splash" style="background-image: url('../images/cover2.jpg')">
         <h1 style="top: 40%">Select a room</h1>
       </div>
 

@@ -67,7 +67,7 @@ $TotalCost = $row['Price'] * ($days);
       </div>
 
     <!-- Home screen image and text -->
-      <div class="background-splash" style="background-image: url(images/cover1.jpg)">
+      <div class="background-splash" style="background-image: url('../images/cover1.jpg')">
         <h1 style="top: 40%">Booking information</h1>
       </div>
 
