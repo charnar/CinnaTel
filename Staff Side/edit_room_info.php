@@ -52,16 +52,21 @@ $roomrow = $result1 -> fetch_array();
       <!-- Room Edit Information Form -->
 
 
-      <form action="edit_information.php" method="post">
+      <form action="edit_information.php" method="post" enctype="multipart/form-data">
         <ul class="hotel-edit-form">
           <li>
-            <label for="hotelname">Name</label>
-            <input class="input-long" type="text" name="hotelname" value="<?php echo $roomrow['Name']?>">
+            <label style="background-image: url('../images/room1.jpg'); height: 400px; margin-bottom: 20px; cursor: pointer;" for="roomimage"></label>
+            <input type="file" name="roomimage" style="display: none;">
           </li>
 
           <li>
-            <label for="email">Price per night</label>
-            <input class="input-short" type="text" name="email" value="<?php echo $roomrow['Price']?>">
+            <label for="roomname">Name</label>
+            <input class="input-long" type="text" name="roomname" value="<?php echo $roomrow['Name']?>">
+          </li>
+
+          <li>
+            <label for="price">Price per night</label>
+            <input class="input-short" type="text" name="price" value="<?php echo $roomrow['Price']?>">
           </li>
 
           <li>
