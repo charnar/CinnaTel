@@ -72,32 +72,32 @@ $roomrow = $result1 -> fetch_array();
 
           <li>
             <label for="description">Description</label>
-            <textarea name="description" rows="10" cols="45"><?php echo $roomrow['Description']?></textarea>
+            <textarea name="description" rows="10" cols="44"><?php echo $roomrow['Description']?></textarea>
           </li>
 
           <li style="margin-top: 20px;">
             <label>Privellages</label>
             <!-- Spa Privellages -->
             <input type="hidden" name="spa" value="0"/>
-            <input type="checkbox" name="spa" value="1"
+            <input type="checkbox" name="spa" value="1" id="form-checkbox" style="margin-left: 0px;"
             <?php if ($roomrow['Spa'] == 1) { echo 'checked'; } ?>
             >Spa</input>
 
             <!-- Sauna Privellages -->
             <input type="hidden" name="sauna" value="0"/>
-            <input type="checkbox" name="sauna" value="1"
+            <input type="checkbox" name="sauna" value="1" id="form-checkbox"
             <?php if ($roomrow['Sauna'] == 1) { echo 'checked'; } ?>
             >Sauna</input>
 
             <!-- Fitness Privellages -->
             <input type="hidden" name="fitness" value="0"/>
-            <input type="checkbox" name="fitness" value="1"
+            <input type="checkbox" name="fitness" value="1" id="form-checkbox"
             <?php if ($roomrow['Fitness'] == 1) { echo 'checked'; } ?>
             >Fitness</input>
 
             <!-- Lounge Privellages -->
             <input type="hidden" name="lounge" value="0"/>
-            <input type="checkbox" name="lounge" value="1"
+            <input type="checkbox" name="lounge" value="1" id="form-checkbox"
             <?php if ($roomrow['Lounge'] == 1) { echo 'checked'; } ?>
             >Lounge</input>
 

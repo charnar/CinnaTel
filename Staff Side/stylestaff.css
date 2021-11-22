@@ -429,12 +429,12 @@ canvas  {
   align-self: center;
 }
 
-.room-number-card-left > h1{
+.room-number-card-left > h1 {
   font-weight: normal;
   font-size: 25px;
 }
 
-.room-number-card-left > h2{
+.room-number-card-left > h2 {
   font-size: 20px;
 }
 
@@ -495,6 +495,13 @@ canvas  {
 
 .hotel-edit-form > li > textarea {
   font-size: 18px;
+  padding: 10px;
+}
+
+input#form-checkbox {
+  margin-left: 20px;
+  margin-right: 5px;
+  cursor: pointer;
 }
 
 
