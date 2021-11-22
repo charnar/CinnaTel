@@ -25,12 +25,12 @@ Check-out | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 Edit Hotel Information | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 Guest List | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 View Guest Info | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
+View Payment Info | :x: | :x: | :x:
 Staff List | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 Edit Staff Info | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 Move Staff Hotel Branch | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 View Room Types | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
-Add New Room Type | :x: | :x: | :x:
-Edit Room Type | :heavy_check_mark: | :x: | :x:
+Edit Room Type | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 
 
 # Stored Procedures and Triggers
