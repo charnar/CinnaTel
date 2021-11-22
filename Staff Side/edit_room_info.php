@@ -52,33 +52,34 @@ $roomrow = $result1 -> fetch_array();
       <!-- Room Edit Information Form -->
 
 
-      <div class="room-form-container">
-        <div class="room-form-left">
-          <div class="room-image" style="background-image: url(<?php echo $roomrow['ImageLink'];?>)"></div>
-        </div>
+      <form action="edit_information.php" method="post">
+        <ul class="hotel-edit-form">
+          <li>
+            <label for="hotelname">Name</label>
+            <input class="input-long" type="text" name="hotelname" value="<?php echo $roomrow['Name']?>">
+          </li>
 
-        <div class="room-form-right">
-          <form action="edit_information.php" method="post"> <!-- Submit button *change the value to the roomType.TypeID so it can be posted -->
+          <li>
+            <label for="email">Price per night</label>
+            <input class="input-short" type="text" name="email" value="<?php echo $roomrow['Price']?>">
+          </li>
 
-              <input type="text" id="roomname" name="roomname" value="<?php echo $roomrow['Name'];?>">
+          <li>
+            <label for="description">Description</label>
+            <textarea name="description" rows="10" cols="45"><?php echo $roomrow['Description']?></textarea>
+          </li>
 
-              <input type="text" id="price" name="price" value="<?php echo $roomrow['Price'];?>">
 
-              <input type="text" id="guests" name="guests" value="<?php echo $roomrow['MaxGuests'];?>">
 
-              <h1></h1>
-              <textarea id="description" name="description" rows="10" cols="31"><?php echo $roomrow['Description'];?></textarea>
+          <input type="hidden" name="typeid" value=<?php echo $typeid;?>>
 
-              <input type="hidden" name="hotelid" value="<?php echo $hotelid;?>">
-              <input type="hidden" name="typeid" value="<?php echo $typeid;?>">
+          <div style="position: relative; margin-top: 2em; text-align: center;">
+            <button type="submit" name="edit-roomtype" class="hover-button" style="padding: 7.5px 60px; font-size: 18px; z-index: 1">Apply</button>
+          </div>
+        </ul>
+      </form>
 
-              <h1></h1>
-              <button type=button onclick="history.go(-1)" class=hover-button style="z-index: 1; margin-right: 10px; margin-top: 1.25em;">Go Back</button>
-              <button type="submit" name="submit" class="hover-button" style="z-index: 1; margin-top: 1.25em; margin-right: 10px;">Confirm booking</button>
-          </form>
-
-        </div>
-      </div>
+      <div style="height: 50px;"></div>
 
 
 

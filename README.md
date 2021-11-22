@@ -1,3 +1,5 @@
+# Cinnamon Hotel Database System Project
+
 #TeamCinnamonBun
 
 Welcome to our hotel database system project. This is for the CSS325 Database Systems project this semester.
@@ -29,3 +31,13 @@ Move Staff Hotel Branch | :heavy_check_mark: | :heavy_check_mark: | :heavy_check
 View Room Types | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 Add New Room Type | :x: | :x: | :x:
 Edit Room Type | :heavy_check_mark: | :x: | :x:
+
+
+# Stored Procedures and Triggers
+- displayRooms(IN HotelID): Returns all room types from the given HotelID
+- getGuestBooking(IN BookingID): Returns a guest booking from the given BookingID
+- getHotelBranch(): Returns all hotel branches
+
+- checkBankSlip: Makes BankSlip NULL if not inputted by the customer before inserting into the Payment entity
+- checkBooking: Makes DiscountCode and ExtraInfo NULL if not inputted by the customer before inserting into the Booking entity
+- encryptPassword: Encrypts the users password before inserting into the Staff entity

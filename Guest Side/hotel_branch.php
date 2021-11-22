@@ -12,7 +12,7 @@ if(!$result) {
 }
 
 $hoteldata = $result -> fetch_array();
-$altimagelink = substr_replace($hoteldata['ImageLink'], 'alt', 13, 0);
+$altimagelink = substr_replace($hoteldata['ImageLink'], 'alt', 16, 0);
 
 $q1 = "CALL displayRooms('$hotelid')";
 
