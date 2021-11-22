@@ -72,6 +72,10 @@ if (isset($_POST['edit-roomtype'])) {
   $roomname = $_POST['roomname'];
   $price = $_POST['price'];
   $description = str_replace("'", "\'", $_POST['description']);
+  $spa = $_POST['spa'];
+  $sauna = $_POST['sauna'];
+  $fitness = $_POST['fitness'];
+  $lounge = $_POST['lounge'];
 
 
   if (is_uploaded_file($_FILES['roomimage']['tmp_name']))  {
@@ -81,12 +85,12 @@ if (isset($_POST['edit-roomtype'])) {
     move_uploaded_file($_FILES["roomimage"]["tmp_name"], $directory);
 
     $q = "UPDATE roomtype SET Name = '$roomname', Price = '$price', Description = '$description',
-    ImageLink = '$directory' WHERE TypeID = '$typeid';";
+    Spa = '$spa', Sauna = '$sauna', Fitness = '$fitness', Lounge = '$lounge', ImageLink = '$directory' WHERE TypeID = '$typeid';";
   }
 
   else {
-    $q = "UPDATE roomtype SET Name = '$roomname', Price = '$price', Description = '$description'
-    WHERE TypeID = '$typeid';";
+    $q = "UPDATE roomtype SET Name = '$roomname', Price = '$price', Description = '$description',
+    Spa = '$spa', Sauna = '$sauna', Fitness = '$fitness', Lounge = '$lounge' WHERE TypeID = '$typeid';";
   }
 
 
