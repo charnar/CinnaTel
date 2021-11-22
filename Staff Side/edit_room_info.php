@@ -30,6 +30,7 @@ $roomrow = $result1 -> fetch_array();
       <title>CinnaTel Staff | Edit Hotel Information</title>
       <link rel="stylesheet" href="stylestaff.css">
       <link rel="stylesheet" href="stylecontainers.css">
+      <script src="script.js"></script>
   </head>
 
   <body>
@@ -55,8 +56,8 @@ $roomrow = $result1 -> fetch_array();
       <form action="edit_information.php" method="post" enctype="multipart/form-data">
         <ul class="hotel-edit-form">
           <li>
-            <label style="background-image: url('../images/room1.jpg'); height: 400px; margin-bottom: 20px; cursor: pointer;" for="roomimage"></label>
-            <input type="file" name="roomimage" style="display: none;">
+            <label onclick="document.getElementById('roomimage').click()" class="room-image"; style="background-image: url('<?php echo $roomrow['ImageLink']?>'); margin-bottom: 20px; cursor: pointer;"></label>
+            <input type="file" id="roomimage" name="roomimage" style="display: none;"/>
           </li>
 
           <li>
@@ -73,7 +74,6 @@ $roomrow = $result1 -> fetch_array();
             <label for="description">Description</label>
             <textarea name="description" rows="10" cols="45"><?php echo $roomrow['Description']?></textarea>
           </li>
-
 
 
           <input type="hidden" name="typeid" value=<?php echo $typeid;?>>
