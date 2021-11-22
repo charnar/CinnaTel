@@ -30,7 +30,6 @@ $roomrow = $result1 -> fetch_array();
       <title>CinnaTel Staff | Edit Hotel Information</title>
       <link rel="stylesheet" href="stylestaff.css">
       <link rel="stylesheet" href="stylecontainers.css">
-      <script src="script.js"></script>
   </head>
 
   <body>

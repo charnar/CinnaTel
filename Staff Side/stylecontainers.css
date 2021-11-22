@@ -115,4 +115,59 @@
   padding-top: 1em;
   font-size: 20px;
 }
-/* End of Hotel Room Container for booking */
+/* END OF Hotel Room Container for booking */
+
+
+/* Image Modal for Payment Slip */
+.payment-modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.content-modal {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  animation-name: zoom;
+  animation-duration: 0.5s;
+}
+
+
+.close-button-modal {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-button-modal:hover, .close-button-modal:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 700px) {
+  .content-modal {
+    width: 100%;
+  }
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* END OF Image Modal for Payment Slip */

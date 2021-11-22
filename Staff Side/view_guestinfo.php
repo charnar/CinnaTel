@@ -37,9 +37,11 @@ $TotalCost = $row['Price'] * ($days);
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>CinnaTel | Booking information</title>
       <link rel="stylesheet" href="stylestaff.css">
+      <link rel="stylesheet" href="stylecontainers.css">
   </head>
 
   <body>
+    <script src="staffscript.js"></script>
     <!-- Fixed navigation bar -->
       <div class="navbar">
         <!-- Top left icon -->
@@ -71,15 +73,24 @@ $TotalCost = $row['Price'] * ($days);
             <h2>Check-out: <span><?php echo $row['DateTo'];?></span></h2>
             <h2>Price per night: <span>$<?php echo $row['Price'];?></span></h2>
             <h2>Amount due: <span>$<?php echo $TotalCost;?></span></h2>
+            <h2>Payment method: <span><?php echo $row['Method'];?></span></h2>
+            <?php
+            if ($row['Method'] == 'Bank Transfer')  { ?>
+              <button onclick="openModal()" id="button-modal" name="button-modal" class="hover-button" style="z-index: 1; margin-top: 20px; font-size: 20px;">View Payment Slip</button>
+
+              <div id="payment-modal" class="payment-modal">
+                  <!-- Close Button -->
+                  <span onclick="closeModal()" class="close-button-modal">&times;</span>
+                  <!-- Payment Slip Image-->
+                  <img class="content-modal" src="<?php echo $row['BankSlip']?>">
+              </div>
+
+            <?php } ?>
+
         </div>
       </div>
 
 
       <div style="padding: 2em;"></div>
-
-
-
-
-
   </body>
 </html>
