@@ -1,3 +1,5 @@
+# Cinnamon Hotel Database System Project
+
 #TeamCinnamonBun
 
 Welcome to our hotel database system project. This is for the CSS325 Database Systems project this semester.
