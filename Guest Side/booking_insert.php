@@ -105,7 +105,7 @@ $gid = $fetchgid['GuestID']; // use this as GuestID
 //process the bank payment slip if many
 if (is_uploaded_file($_FILES['bankslip']['tmp_name']))  {
   $filename = 'paymentbankslip'.$gid.'';
-  $directory = 'bankslips/'.$filename.'.jpg';
+  $directory = '../Staff Side/bankslips/'.$filename.'.jpg';
   //store the bank slip in the bankslips folder
   move_uploaded_file($_FILES["bankslip"]["tmp_name"], $directory);
 }
