@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 22, 2021 at 05:07 AM
+-- Generation Time: Nov 23, 2021 at 01:26 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -35,13 +35,13 @@ END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `getGuestBooking` (IN `bookingID` BIGINT)  BEGIN
 	SELECT guest.Fname, guest.Lname, guest.Prefix, guest.Phone, guest.Email, hotel.Name, hotel.Country, 
-    roomtype.Name AS RoomName, roomtype.Price, booking.DateFrom, booking.DateTo, booking.Adults, booking.Children, 
-    roomtype.ImageLink
-	FROM booking, guest, roomtype, roomsbooked, hotel
+    roomtype.Name AS RoomName, roomtype.Price, booking.DateFrom, booking.DateTo, booking.Adults, booking.Children, roomtype.ImageLink, payment.Method, payment.BankSlip 
+	FROM booking, guest, roomtype, roomsbooked, hotel, payment
 	WHERE booking.GuestID = guest.GuestID
     	AND roomsbooked.BookingID = booking.BookingID
     	AND roomsbooked.TypeID = roomtype.TypeID
     	AND booking.HotelID = hotel.HotelID
+        AND payment.PaymentID = booking.PaymentID
     	AND booking.BookingID = bookingID;
 
 END$$
@@ -68,8 +68,8 @@ CREATE TABLE `booking` (
   `Adults` int(2) NOT NULL,
   `Children` int(2) NOT NULL,
   `ReserveDate` date NOT NULL,
-  `DiscountCode` varchar(20) NOT NULL,
-  `ExtraInfo` text NOT NULL
+  `DiscountCode` varchar(20) DEFAULT NULL,
+  `ExtraInfo` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -89,6 +89,23 @@ INSERT INTO `booking` (`BookingID`, `HotelID`, `GuestID`, `PaymentID`, `DateFrom
 (10, 2, 10, 10, '2021-11-07', '2021-11-11', 2, 0, '2021-11-04', 'ECLAIR', ''),
 (11, 2, 11, 11, '2021-11-08', '2021-11-11', 2, 0, '2021-11-05', 'AUBONPAIN', ''),
 (12, 2, 12, 12, '2021-11-10', '2021-11-13', 2, 2, '2021-11-04', 'IMINPAIN', '');
+
+--
+-- Triggers `booking`
+--
+DELIMITER $$
+CREATE TRIGGER `checkBooking` BEFORE INSERT ON `booking` FOR EACH ROW BEGIN
+	IF (NEW.DiscountCode = '') THEN
+    	SET NEW.DiscountCode = NULL;
+    END IF;
+    
+    IF (NEW.ExtraInfo = '') THEN
+    	SET NEW.ExtraInfo = NULL;
+    END IF;
+
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -149,8 +166,8 @@ CREATE TABLE `hotel` (
 --
 
 INSERT INTO `hotel` (`HotelID`, `Name`, `Address`, `City`, `Province`, `Country`, `ZipCode`, `Email`, `Phone`, `ImageLink`, `Description`) VALUES
-(1, 'Cinnabun Resort', '3/325 Mellow Trail', 'Cinnatown', 'Mt. Buns', 'Cinnamon Islands', '12021', 'cinnabun@cinnatel.org', '029991234', 'images/hotel1.jpg', 'You can\'t buy happiness, but you can buy cake and that\'s kind of the same thing.\r\n<br><br>\r\nThere was a mood of magic and frenzy to the room. Crystalline swirls of sugar and flour still lingered in the air like kite tails. And then there was the smell. The smell of hope, the kind of smell that brought people home.'),
-(2, 'The Cinnahill ', '3/326, Peak Path', 'The Peak', 'Mt. Buns', 'Cinnamon Islands', '22021', 'cinnahill@cinnatel.org', '029991112', 'images/hotel2.jpg', 'Life\'s batter with cake.<br><br>\r\nBaking may be regarded as a science, but it\'s the chemistry between the ingredients and the cook that gives desserts life. Baking is done out of love, to share with family and friends, to see them smile. Find something you\'re passionate about and keep interested in it.');
+(1, 'Cinnabun Resort', '3/325 Mellow Trail', 'Cinnatown', 'Mt. Buns', 'Cinnamon Islands', '12021', 'cinnabun@cinnatel.org', '029991234', '../images/hotel1.jpg', 'You can\'t buy happiness, but you can buy cake and that\'s kind of the same thing.\r\n<br><br>\r\nThere was a mood of magic and frenzy to the room. Crystalline swirls of sugar and flour still lingered in the air like kite tails. And then there was the smell. The smell of hope, the kind of smell that brought people home.'),
+(2, 'The Cinnahill ', '3/326, Peak Path', 'The Peak', 'Mt. Buns', 'Cinnamon Islands', '22021', 'cinnahill@cinnatel.org', '029991112', '../images/hotel2.jpg', 'Life\'s batter with cake.<br><br>\r\nBaking may be regarded as a science, but it\'s the chemistry between the ingredients and the cook that gives desserts life. Baking is done out of love, to share with family and friends, to see them smile. Find something you\'re passionate about and keep interested in it.');
 
 -- --------------------------------------------------------
 
@@ -171,7 +188,7 @@ CREATE TABLE `payment` (
 --
 
 INSERT INTO `payment` (`PaymentID`, `Method`, `Date`, `Status`, `BankSlip`) VALUES
-(1, 'Bank Transfer', '2021-11-07', 1, NULL),
+(1, 'Bank Transfer', '2021-11-07', 1, 'bankslips/paymentbankslip1.jpg'),
 (2, 'Kidney', '2021-11-07', 0, NULL),
 (3, 'Bank Transfer', '2021-11-07', 1, NULL),
 (4, 'Crypto', '2021-11-01', 1, NULL),
@@ -291,12 +308,12 @@ CREATE TABLE `roomtype` (
 --
 
 INSERT INTO `roomtype` (`TypeID`, `Name`, `Price`, `MaxGuests`, `Description`, `Spa`, `Sauna`, `Fitness`, `Lounge`, `ImageLink`) VALUES
-(1, 'Chifon', 75, 3, 'I like cinnamon rolls. but I don\'t always have time to make a pan. That\'s why I wish they would sell cinnamon roll incense. After all I\'d rather light a stick and have my roommate wake up with false hopes.', 1, 1, 1, 0, 'images/room1.jpg'),
-(2, 'Dundee', 50, 1, 'The nice thing about baking alone in the kitchen before dawn is that you can talk to yourself like a crazy person and no one suspects you\'re a crazy person.', 1, 1, 1, 0, 'images/room2.jpg'),
-(3, 'Madeleine ', 100, 4, 'I like big bundts and I cannot lie. A bad review is like baking a cake with all the best ingredients and having someone sit on it.', 1, 1, 1, 1, 'images/room3.jpg'),
-(4, 'Noumea', 70, 1, 'Pastry is different from cooking because you have to consider the chemistry, beauty and flavor. It\'s not just sugar and eggs thrown together. I tell my pastry chefs to be in tune for all of this. You have to be challenged by using secret or unusual ingredients.', 1, 0, 1, 0, 'images/room4.jpg'),
-(5, 'Criolo', 80, 2, 'Love is like a good cake. You never know when it\'s coming but you\'d better eat it when it does. Homemade with love in other words I licked the spoon and kept using it.', 1, 0, 1, 1, 'images/room5.jpg'),
-(6, 'Tarlette', 110, 4, 'Love my pastries. More than my blood sugar. Sometimes my heart says never. But my says ever? Whoever said money can\'t buy happiness has obviously not been to a bakery.', 1, 1, 1, 1, 'images/room6.jpg');
+(1, 'Chifon', 75, 3, 'I like cinnamon rolls. but I don\'t always have time to make a pan. That\'s why I wish they would sell cinnamon roll incense. After all I\'d rather light a stick and have my roommate wake up with false hopes.', 1, 1, 1, 0, '../images/room1.jpg'),
+(2, 'Dundee', 50, 1, 'The nice thing about baking alone in the kitchen before dawn is that you can talk to yourself like a crazy person and no one suspects you\'re a crazy person.', 1, 1, 1, 0, '../images/room2.jpg'),
+(3, 'Madeleine ', 100, 4, 'I like big bundts and I cannot lie. A bad review is like baking a cake with all the best ingredients and having someone sit on it.', 1, 1, 1, 1, '../images/room3.jpg'),
+(4, 'Noumea', 60, 1, 'Pastry is different from cooking because you have to consider the chemistry, beauty and flavor. It\'s not just sugar and eggs thrown together. I tell my pastry chefs to be in tune for all of this. You have to be challenged by using secret or unusual ingredients.', 1, 0, 1, 0, '../images/room4.jpg'),
+(5, 'Criolo', 80, 2, 'Love is like a good cake. You never know when it\'s coming but you\'d better eat it when it does. Homemade with love in other words I licked the spoon and kept using it.', 1, 0, 1, 1, '../images/room5.jpg'),
+(6, 'Tarlette', 110, 4, 'Love my pastries. More than my blood sugar. Sometimes my heart says never. But my says ever? Whoever said money can\'t buy happiness has obviously not been to a bakery.', 1, 1, 1, 1, '../images/room6.jpg');
 
 -- --------------------------------------------------------
 
@@ -326,7 +343,7 @@ CREATE TABLE `staff` (
 INSERT INTO `staff` (`StaffID`, `HotelID`, `Fname`, `Lname`, `Prefix`, `City`, `Country`, `Phone`, `Email`, `Position`, `Username`, `Password`) VALUES
 (1, 1, 'Charn', 'Arunkit', 'Mr.', 'Bangkok', 'Thailand', '0987654321', 'charn@cinnatel.org', 'Receptionist', 'charn_ar', '81dc9bdb52d04dc20036dbd8313ed055'),
 (2, 1, 'Rin', 'Rada', 'Ms.', 'Khon Kaen', 'Thailand', '0123456789', 'rinrada@cinnatel.org', 'Manager', 'galgal', '6ed975b93e145357d44dfc336c8daedd'),
-(3, 2, 'Nutty ', 'Danny', 'Mr.', 'Cinnatown', 'Cinnamon Islands', '99999', 'nutdanny@g.siit.tu.ac.th', 'Receptionist', 'nut', 'a0491eb77ad302615cb757d193d47c7e');
+(3, 2, 'Nutty', 'Danny', 'Mr.', 'Cinnatown', 'Cinnamon Islands', '099241231', 'nutdanny@g.siit.tu.ac.th', 'Receptionist', 'nut', 'a0491eb77ad302615cb757d193d47c7e');
 
 --
 -- Triggers `staff`
@@ -407,13 +424,13 @@ ALTER TABLE `staff`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `BookingID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `BookingID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `guest`
 --
 ALTER TABLE `guest`
-  MODIFY `GuestID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `GuestID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `hotel`
@@ -425,7 +442,7 @@ ALTER TABLE `hotel`
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `PaymentID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `PaymentID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `room`
