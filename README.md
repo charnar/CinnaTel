@@ -41,3 +41,6 @@ Edit Room Type | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:
 - checkBankSlip: Makes BankSlip NULL if not inputted by the customer before inserting into the Payment entity
 - checkBooking: Makes DiscountCode and ExtraInfo NULL if not inputted by the customer before inserting into the Booking entity
 - encryptPassword: Encrypts the users password before inserting into the Staff entity
+
+# Post-Semester Changes
+Coming Soon
